@@ -1,23 +1,16 @@
-developers-script
-=================
+# NGINX-PHP-FPM-MONGODB INSTALL SCRIPT #
 
-Bash Script auto-install
+A script to install Nginx, Php-Fpm, MongoDB stack on Ubuntu.
 
+It uses the stable release repository provided by 10gen.
 
-Programs>
+## Platform ##
+The script is build for the following platforms:
+* Debian, Ubuntu
 
-1) SSH
+The script is tested on the following platforms:
+* Ubuntu 12.04, 12.10
 
-2) GIT
-
-3) NGINX
-
-4) PHP 5.5
-
-5) Mongodb (10gen repo)
-
-6) SUBLIME TEXT 3
-
-7) COMPOSER
-
-
+## Install ##
+    chmod +x install.sh
+    sudo ./install.sh
