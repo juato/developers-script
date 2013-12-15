@@ -71,6 +71,33 @@ curl -sS https://getcomposer.org/installer | php
 echo "Acceso global por medio de por ejemplo: -composer update-"
 sudo mv composer.phar /usr/local/bin/composer
 
+
+echo '#############################'
+echo 'REDIS instalación'
+echo '#############################'
+
+sudo apt-get update
+echo "${bold}=====> Dependencias"
+sudo apt-get install build-essential tcl8.5 -y
+echo "${bold}=====> Descarga redis oficial"
+wget http://download.redis.io/releases/redis-2.8.3.tar.gz
+echo "${bold}=====> Descompresión"
+tar xzf redis-2.8.3.tar.gz
+cd redis-2.8.3
+echo "${bold}=====> Compilación"
+make
+echo "${bold}=====> TEST!!"
+make test
+echo "${bold}=====> Instalación"
+sudo make install -y
+cd utils 
+echo "${bold}=====> Instalación de parametros por defaul de REDIS"
+sudo ./install_server.sh -y
+echo "${bold}=====> Inicio del demonio"
+sudo service redis_6379 start
+echo "${bold}=====> Colocamos demonio al inicio"
+sudo update-rc.d redis_6379 defaults -y
+
 echo "${bold}=====> Eliminando dependencias innecesarias?"
 sudo apt-get autoremove
 
