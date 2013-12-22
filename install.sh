@@ -98,6 +98,16 @@ sudo service redis_6379 start
 echo "${bold}=====> Colocamos demonio al inicio"
 sudo update-rc.d redis_6379 defaults -y
 
+
+echo '#############################'
+echo 'MEMCACHED instalación'
+echo '#############################'
+
+sudo apt-get install -y memcached php-memcache php5-memcache php5-memcached
+echo "CONFIG IN  /etc/memcached.conf"
+sudo service nginx restart && sudo service php5-fpm restart
+
+
 echo "${bold}=====> Eliminando dependencias innecesarias?"
 sudo apt-get autoremove
 
