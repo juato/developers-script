@@ -103,7 +103,7 @@ echo '#############################'
 echo 'MEMCACHED instalación'
 echo '#############################'
 
-sudo apt-get install -y memcached php-memcache php5-memcache php5-memcached
+sudo apt-get install -y memcached php5-memcache php5-memcache php5-memcached
 echo "CONFIG IN  /etc/memcached.conf"
 sudo service nginx restart && sudo service php5-fpm restart
 
