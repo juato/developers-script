@@ -92,7 +92,7 @@ echo "${bold}=====> Instalación"
 sudo make install -y
 cd utils 
 echo "${bold}=====> Instalación de parametros por defaul de REDIS"
-sudo ./install_server.sh -y
+sudo chmod +x install_server.sh && sudo ./install_server.sh -y
 echo "${bold}=====> Inicio del demonio"
 sudo service redis_6379 start
 echo "${bold}=====> Colocamos demonio al inicio"
